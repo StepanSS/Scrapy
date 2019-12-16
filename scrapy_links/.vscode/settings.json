@@ -1,6 +1,0 @@
-{
-    "python.pythonPath": "venv\\Scripts\\python37.exe",
-    "python.linting.pylintEnabled": false,
-    "python.linting.enabled": true,
-    "python.linting.banditEnabled": true
-}

@@ -1,8 +1,13 @@
 */venv/
+*.venv/
+*.vscode/
+demo_project/
 */build/
 */dist/
 scrapy_links_exe/
 errors.csv
+res.csv
 *.spec
+tests_scrapy.py
 jokes.py
 myspider.py

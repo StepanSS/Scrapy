@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for demo_project project
+# Scrapy settings for link_scraper project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'demo_project'
+BOT_NAME = 'link_scraper'
 
-SPIDER_MODULES = ['demo_project.spiders']
-NEWSPIDER_MODULE = 'demo_project.spiders'
+SPIDER_MODULES = ['link_scraper.spiders']
+NEWSPIDER_MODULE = 'link_scraper.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'demo_project (+http://www.yourdomain.com)'
+#USER_AGENT = 'link_scraper (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -47,13 +47,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'demo_project.middlewares.DemoProjectSpiderMiddleware': 543,
+#    'link_scraper.middlewares.LinkScraperSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'demo_project.middlewares.DemoProjectDownloaderMiddleware': 543,
+#    'link_scraper.middlewares.LinkScraperDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +65,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'demo_project.pipelines.DemoProjectPipeline': 300,
+   'link_scraper.pipelines.LinkScraperPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

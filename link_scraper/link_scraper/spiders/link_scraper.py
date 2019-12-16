@@ -1,20 +1,21 @@
 import scrapy
 
-from demo_project.items import LinkScraperItem
-from demo_project.pipelines import ErrorHandler
+from link_scraper.items import LinkScraperItem
+from link_scraper.pipelines import ErrorHandler
 
 
 
 class LinkScraper(scrapy.Spider):
     handle_httpstatus_list = [404, 403, 500]
     name= 'LinkScraper'
-    log_created = False
+    
 
     # def __init__(self):
     #     self.start_urls = ['https://brownsville.org/members/brownsville-public-library/']
     #     self.search_params = ['home']
 
-    def __init__(self, urls: list, search_params: list):    
+    def __init__(self, urls: list, search_params: list):
+        self.log_created = False    
         self.start_urls = urls
         self.search_params = search_params
         

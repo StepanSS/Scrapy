@@ -253,6 +253,7 @@ class Application(tk.Frame):
         def run_spyder():
             runner = CrawlerRunner(get_project_settings())
             runner.crawl('LinkScraper', url_list, search_words)
+            # runner.crawl('quotes') # test spider
             d = runner.join()
             d.addBoth(lambda _: reactor.stop())
             reactor.run()

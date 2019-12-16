@@ -6,7 +6,7 @@
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 
 
-class DemoProjectPipeline(object):
+class LinkScraperPipeline(object):
 
     def __init__(self):
         with open('res.csv', 'w') as f:
