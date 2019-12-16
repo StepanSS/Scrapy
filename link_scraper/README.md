@@ -1,1 +1,2 @@
-Use `run.py` to run scraper
+- use `run.py` to run scraper
+- use `Pipfile.lock` to build exactly the same virtual environment 
