@@ -3,3 +3,6 @@
 */dist/
 scrapy_links_exe/
 errors.csv
+*.spec
+jokes.py
+myspider.py
