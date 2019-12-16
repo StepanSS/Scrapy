@@ -1,0 +1,5 @@
+*/venv/
+*/build/
+*/dist/
+scrapy_links_exe/
+errors.csv
