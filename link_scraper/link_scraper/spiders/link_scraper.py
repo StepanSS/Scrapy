@@ -34,7 +34,9 @@ class LinkScraper(scrapy.Spider):
                 items['url']= response.url
                 if items['link']:
                     print(f"FOUND - {search_param}\tin: {response.url}")
-                yield items
+                    yield items
+                    break
+                
 
     def start_requests(self):
         for url in self.start_urls:
