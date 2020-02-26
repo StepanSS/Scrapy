@@ -20,7 +20,7 @@ class LinkScraper(scrapy.Spider):
         self.search_params = search_params
         
    
-    def parse_httpbin(self, response):
+    def parse_httpbin(self, response, url_id):
         if response.status != 200:
             print(f"ERROR\t\tin: {response.url} \t Response: {response.status}")            
             ErrorHandler(self.log_created).err_log(response)
@@ -30,8 +30,9 @@ class LinkScraper(scrapy.Spider):
         for search_param in self.search_params:
             if search_param !='':
                 items= LinkScraperItem().fields
-                items['link']= response.xpath(f"//a[contains(translate(@href,  'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '{search_param}' )]/@href").get()
-                items['url']= response.url
+                items['link'] = response.xpath(f"//a[contains(translate(@href,  'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '{search_param}' )]/@href").get()
+                items['url'] = response.url
+                items['url_id'] = url_id
                 if items['link']:
                     print(f"FOUND - {search_param}\tin: {response.url}")
                     yield items
@@ -39,10 +40,10 @@ class LinkScraper(scrapy.Spider):
                 
 
     def start_requests(self):
-        for url in self.start_urls:
+        for url_id, url in enumerate(self.start_urls):
             yield scrapy.Request(url, callback=self.parse_httpbin,
                                     errback=self.errback_httpbin,
-                                    dont_filter=True)
+                                    cb_kwargs=dict(url_id=url_id))
 
     # def parse_httpbin(self, response):
     #     self.logger.error('Got successful response from {}'.format(response.url))
